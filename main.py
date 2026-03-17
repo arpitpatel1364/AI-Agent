@@ -56,4 +56,4 @@ def run_agent(user_input: str):
 
 if __name__ == "__main__":
     # Test query
-    run_agent("Who won the latest major AI safety summit in 2025 and what is their goal?")
+    run_agent("what is the name of the capital of india?")
