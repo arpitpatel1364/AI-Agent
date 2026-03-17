@@ -1,7 +1,8 @@
 # AI-Agent
 # 🤖 Agentic AI Researcher (2026 Edition)
 
-A local, private AI agent built with **LangGraph** and **Ollama**. It can autonomously decide whether to search Wikipedia for facts or use the live web for news to answer your questions.
+A local, private AI agent built with **LangGraph** and **Ollama**. It can autonomously decide whether to search Wikipedia for facts or use the live web for news to answer your questions with rememberise chat features.
+("Note: it's chat speed was depend on your GPU")
 
 ## 🛠️ Requirements
 - **Python 3.10+**
