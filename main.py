@@ -36,7 +36,7 @@ def start_chat():
     chat_history = []
     
     print("\n" + "="*50)
-    print("🤖 AI Research Agent is Online (March 2026)")
+    print(" AI Research Agent is Online (March 2026)")
     print("Type 'exit' or 'quit' to stop the conversation.")
     print("="*50 + "\n")
 
@@ -72,7 +72,7 @@ def start_chat():
             chat_history.append(("assistant", data.response))
 
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f" Error: {e}")
             print("Hint: Ensure 'ollama serve' is running and you have pulled 'llama3.1'.")
 
 if __name__ == "__main__":
