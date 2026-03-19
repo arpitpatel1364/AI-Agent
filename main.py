@@ -35,7 +35,7 @@ async def run_research_loop():
     chat_history = []
     
     print("\n" + "═"*50)
-    print(" 🚀 FAST RESEARCH AGENT (TERMINAL MODE)")
+    print("RESEARCH AGENT (TERMINAL MODE)")
     print(" Type 'exit' to quit")
     print("═"*50 + "\n")
 
@@ -68,7 +68,7 @@ async def run_research_loop():
             chat_history.append(("assistant", data.response))
 
         except Exception as e:
-            print(f"\n❌ Error: {e}")
+            print(f"\n Error: {e}")
 
 if __name__ == "__main__":
     # Standard way to run async code in modern Python
