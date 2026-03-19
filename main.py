@@ -1,10 +1,11 @@
+import asyncio
 import os
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from langchain_ollama import ChatOllama
-from langgraph.prebuilt import create_react_agent 
+from langgraph.prebuilt import create_react_agent
 
-# Import tools from our tools.py
+# Import tools from your tools.py
 from tools import tools_list
 
 load_dotenv()
@@ -16,8 +17,8 @@ class ResponseModel(BaseModel):
     summary: str = Field(description="A 2-sentence summary of the research")
     tools_used: list[str] = Field(description="List of tools utilized")
 
-# 2. Initialize LLM
-llm = ChatOllama(model="llama3.1", temperature=0)
+# 2. Initialize LLM with Streaming enabled
+llm = ChatOllama(model="llama3.1", temperature=0, streaming=True)
 
 # 3. Create the Agent
 agent_executor = create_react_agent(
@@ -25,55 +26,50 @@ agent_executor = create_react_agent(
     tools=tools_list,
     prompt=(
         "You are a professional Research AI. "
-        "Use 'search_web' for current events and 'search_wikipedia' for facts. "
-        "Always structure your final answer according to the provided schema."
+        "Use 'search_web' for current events and 'search_wikipedia' for facts."
     ),
     response_format=ResponseModel
 )
 
-def start_chat():
-    # This list will store the conversation history
+async def run_research_loop():
     chat_history = []
     
-    print("\n" + "="*50)
-    print(" AI Research Agent is Online (March 2026)")
-    print("Type 'exit' or 'quit' to stop the conversation.")
-    print("="*50 + "\n")
+    print("\n" + "═"*50)
+    print(" 🚀 FAST RESEARCH AGENT (TERMINAL MODE)")
+    print(" Type 'exit' to quit")
+    print("═"*50 + "\n")
 
     while True:
-        user_input = input("You: ")
+        user_input = input("User 👤: ")
 
-        if user_input.lower() in ["exit", "quit", "bye"]:
-            print("Agent: Goodbye! Have a great day.")
+        if user_input.lower() in ["exit", "quit"]:
+            print("\nExiting. Happy coding!")
             break
 
-        # Append the new user message to history
         chat_history.append(("user", user_input))
-        
-        print("\nAgent is thinking...")
+        print("\nAgent 🤖 thinking...", end="\r")
 
         try:
-            # We pass the entire chat_history to the agent
-            inputs = {"messages": chat_history}
-            result = agent_executor.invoke(inputs)
+            # Using invoke for structured response
+            # Note: For even faster "token-by-token" visual, 
+            # you'd use astream_events, but invoke is safer for Pydantic.
+            result = await agent_executor.ainvoke({"messages": chat_history})
             
-            # Access the Pydantic data
             data = result["structured_response"]
             
-            # Print the structured result nicely
-            print("\n" + "-"*30)
-            print(f" TOPIC:   {data.topic}")
-            print(f" SUMMARY: {data.summary}")
-            print(f" ANSWER:  {data.response}")
-            print(f" TOOLS:   {', '.join(data.tools_used) if data.tools_used else 'None'}")
-            print("-"*30 + "\n")
+            # Attractive Terminal Formatting
+            print(f"\r{'─'*50}")
+            print(f"📌 TOPIC:   {data.topic.upper()}")
+            print(f"📝 SUMMARY: {data.summary}")
+            print(f"✅ ANSWER:  {data.response}")
+            print(f"🛠️  TOOLS:   {', '.join(data.tools_used) if data.tools_used else 'Internal Knowledge'}")
+            print(f"{'─'*50}\n")
 
-            # Add the agent's response to history so it remembers for the next question
             chat_history.append(("assistant", data.response))
 
         except Exception as e:
-            print(f" Error: {e}")
-            print("Hint: Ensure 'ollama serve' is running and you have pulled 'llama3.1'.")
+            print(f"\n❌ Error: {e}")
 
 if __name__ == "__main__":
-    start_chat()
+    # Standard way to run async code in modern Python
+    asyncio.run(run_research_loop())
