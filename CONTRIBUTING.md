@@ -117,7 +117,10 @@ npm install
 cp .env.example .env
 
 # 3. Start the development server
-python3 run main.py (linux)
+(For linux users)
+python3 main.py
+(For Windows users)
+python main.py
 ```
 
 > Replace the above with the actual setup steps for your project.
@@ -138,12 +141,6 @@ python3 run main.py (linux)
 - Be responsive to **review feedback** — maintainers may request changes.
 
 ---
-
-## ✍️ Commit Message Convention
-
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-
-```
 <type>(<scope>): <short summary>
 ```
 
@@ -157,34 +154,8 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/) speci
 | `test` | Adding or updating tests |
 | `chore` | Build process, dependency updates, etc. |
 
-**Examples:**
-```
-feat(auth): add Google OAuth login
-fix(api): handle null response from endpoint
-docs(readme): update installation steps
-```
-
----
-
-## 🎨 Code Style
-
-- Follow the existing code style in the project.
-- Run the linter before submitting:
-  ```bash
-  npm run lint
-  ```
-- Format your code:
-  ```bash
-  npm run format
-  ```
-
----
-
 ## 💬 Getting Help
-
-- 📌 Browse [open issues](https://github.com/original-owner/project-name/issues)
-- 💬 Start a [discussion](https://github.com/original-owner/project-name/discussions)
-- 📧 Email the maintainer: `your-email@example.com`
+- 📧 Email the maintainer: `arpitbhojani.contact@gmail.com`
 
 ---
 
