@@ -1,17 +1,17 @@
-# 🙏 Credits
+#  Credits
 
 Thank you to everyone who has contributed to this project!
 
 ---
 
-## 👑 Project Creator
+##  Project Creator
 
 | Name | GitHub | Role |
 |------|--------|------|
 | ARPIT | [@arpitpatel1364](https://github.com/arpitpatel164) | Creator & Maintainer |
 
 
-## 💡 Ideas & Suggestions
+##  Ideas & Suggestions
 
 These people contributed valuable ideas and feedback:
 
