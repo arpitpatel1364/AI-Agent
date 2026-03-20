@@ -111,10 +111,10 @@ Documentation improvements are always welcome! This includes:
 
 ```bash
 # 1. Install dependencies
-npm install
+pip install-r ./requirements.txt
 
 # 2. Copy environment variables
-cp .env.example .env
+python3 -m venv venv 
 
 # 3. Start the development server
 (For linux users)
