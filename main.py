@@ -26,7 +26,8 @@ agent_executor = create_react_agent(
     tools=tools_list,
     prompt=(
         "You are a professional Research AI. "
-        "Use 'search_web' for current events and 'search_wikipedia' for facts."
+        "Use 'search_web' for current events and 'search_wikipedia' for facts. "
+        "If available, 'search_web_tavily' can also be used for current events with high-quality results."
     ),
     response_format=ResponseModel
 )
