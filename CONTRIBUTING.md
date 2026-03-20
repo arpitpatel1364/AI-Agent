@@ -34,8 +34,8 @@ By participating in this project, you agree to uphold our [Code of Conduct](CODE
 1. **Fork** the repository by clicking the "Fork" button on GitHub.
 2. **Clone** your fork locally:
    ```bash
-   git clone https://github.com/your-username/project-name.git
-   cd project-name
+   git clone https://github.com/arpitpatel1364/AI-Agent.git
+   cd AI-Agent
    ```
 3. **Add the upstream remote** to keep your fork in sync:
    ```bash
