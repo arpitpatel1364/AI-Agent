@@ -71,28 +71,7 @@ Have an idea? We'd love to hear it! [Open a feature request](https://github.com/
 
 ---
 
-### 💻 Submitting Code
-
-1. **Check existing issues** — look for open issues labeled `good first issue` or `help wanted`.
-2. **Comment on the issue** to let others know you're working on it.
-3. **Create a branch** from `main`:
-   ```bash
-   git checkout -b feat/your-feature-name
-   # or
-   git checkout -b fix/your-bug-fix
-   ```
-4. **Make your changes** and write/update tests as needed.
-5. **Run tests** to make sure everything passes:
-   ```bash
-   # Replace with your test command
-   npm test
-   ```
-6. **Commit your changes** following the [commit convention](#commit-message-convention).
-7. **Push** to your fork:
-   ```bash
-   git push origin feat/your-feature-name
-   ```
-8. **Open a Pull Request** against the `main` branch.
+ **Open a Pull Request** against the `main` branch.
 
 ---
 
