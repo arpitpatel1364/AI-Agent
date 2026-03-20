@@ -39,7 +39,7 @@ By participating in this project, you agree to uphold our [Code of Conduct](CODE
    ```
 3. **Add the upstream remote** to keep your fork in sync:
    ```bash
-   git remote add upstream https://github.com/original-owner/project-name.git
+   git remote add upstream https://github.com/arpitpatel1364/AI-Agent.git
    ```
 4. **Install dependencies** (see [Development Setup](#development-setup)).
 
