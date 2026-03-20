@@ -117,7 +117,7 @@ npm install
 cp .env.example .env
 
 # 3. Start the development server
-npm run dev
+python3 run main.py (linux)
 ```
 
 > Replace the above with the actual setup steps for your project.
