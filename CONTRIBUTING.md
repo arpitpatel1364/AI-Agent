@@ -120,8 +120,6 @@ python main.py
 - Be responsive to **review feedback** — maintainers may request changes.
 
 ---
-<type>(<scope>): <short summary>
-```
 
 | Type | When to use |
 |------|-------------|
